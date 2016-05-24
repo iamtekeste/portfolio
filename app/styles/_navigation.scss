@@ -2,34 +2,40 @@ nav {
 	text-align:center;
 	background: #f5f5f5;
 	margin-top: 20px;
-	ul {
-		padding: 0;
-	}
 	li {
-		display: inline-block;
-		a {
-			display: block;
-			padding: 30px 15px;
-			font-size: 1em;
-			color:$link-color;
-			text-transform:uppercase;
-			position: relative;
-			transition: all .3s ease-in;
-			&:after {
-			    content: "";
-			    position: absolute;
-			    left: 15px;
-			    background: $link-color;
-			    width: 0%;
-			    bottom: 20px;
-			    height: 2px;
-			    transition: all .3s ease-in;
-			}
+		  @media all and (max-width:321px) {
+		  	display:block !important;
+		  	text-align: left;
+		  }
+		  a {
+		  	font-size: 1em;
+		  	color:$link-color;
+		  	text-transform:uppercase;
+		  	position: relative;
+		  	transition: all .3s ease-in;
+		  	padding: 10px 15px;
+		  	display: block;
+		  	&:after {
+		  	    content: "";
+		  	    position: absolute;
+		  	    left: 15px;
+		  	    background: $link-color;
+		  	    width: 0%;
+		  	    bottom: 4px;
+		  	    height: 2px;
+		  	    transition: all .3s ease-in;
+		  	}
 			&:hover, &.active {
 				&:after {
 					width: 40%;
 				}
 			}
-		}
+			@media all and (min-width: 321px) {
+					padding: 30px 15px;
+					&:after {
+					    bottom: 20px;
+					}
+			}
+		  }
 	}
 }
