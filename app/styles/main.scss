@@ -1,6 +1,7 @@
 // bower:scss
 // endbower
 @import "_variables";
+@import "_navigation";
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -16,7 +17,7 @@ html {
 body {
   font-family:$primary-font-family;
   background-color: $primary-color;
-  padding: 10px;
+  padding: 15px;
   a {
     text-decoration: none;
     &:hover {
@@ -31,6 +32,9 @@ body {
 .hero-unit {
   color: $text-color;
   text-align: center;
+  h1 {
+    margin-top: 0;
+  }
   p.short-bio {
       font-size: 1.375em;
   }
