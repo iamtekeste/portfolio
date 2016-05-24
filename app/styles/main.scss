@@ -1,7 +1,9 @@
 // bower:scss
 // endbower
 @import "_variables";
+@import "_common";
 @import "_navigation";
+@import "_projects";
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;

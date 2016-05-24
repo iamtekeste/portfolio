@@ -1,0 +1,23 @@
+.projects {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.project {
+	max-width: 400px;
+	width: 100%;
+	display: inline-block;
+	margin-bottom:15px;
+	padding: 0px 10px;
+	box-sizing:border-box;
+	@media all and (min-width: 449px) {
+		width: 50%;
+	}
+	@media all and (min-width: 768px) {
+		width: 33.3333333%;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+}
