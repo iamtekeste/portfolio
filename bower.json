@@ -1,7 +1,9 @@
 {
   "name": "portfolio",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "normalize-css": "^4.1.1"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5"

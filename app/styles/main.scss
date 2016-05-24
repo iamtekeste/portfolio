@@ -1,20 +1,49 @@
 // bower:scss
 // endbower
+@import "_variables";
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-@import "_variables";
+html {
+  font-size: 14px;
+  @media all and (min-width:360px) {
+    font-size:16px;
+  }
+}
 body {
   font-family:$primary-font-family;
   background-color: $primary-color;
+  padding: 10px;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.content {
+  max-width: 960px;
+  margin: 0 auto;
 }
 .hero-unit {
   color: $text-color;
   text-align: center;
   p.short-bio {
-      font-size: 22px;
+      font-size: 1.375em;
   }
 }
+.social-icons {
+  text-align: center;
+  .icon {
+    max-width:24px;
+    max-height:24px;
+    margin-left: 15px;
+  }
+  .icon-twitter {
+    fill: #55acee;
+  }
+}
+
