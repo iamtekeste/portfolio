@@ -1,0 +1,26 @@
+.filters {
+	a {
+		color: $link-color;
+		transition: all .3s ease-in-out;
+		padding-right:10px;
+		position:relative;
+		&:hover {
+			&:after {
+				width:50%;
+			}
+		}
+		&:after {
+			content: "";
+			border-bottom:1px dotted;
+			position:absolute;
+			bottom:-5px;
+			left:0;
+			width:0%;
+		}
+	}
+	a.active {
+		&:after {
+			width:50%;
+		}
+	}
+}
