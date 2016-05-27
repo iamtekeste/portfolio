@@ -17,6 +17,15 @@
 		font-size: 13px;
 		color: $secondary-text-color;
 	}
+	.tags {
+		margin-top: 10px;
+		span.tag {
+		    background: $primary-color;
+		    color: #fff;
+		    padding: 5px;
+		    font-size: 13px;
+		}
+	}
 	@media all and (min-width: 650px) {
 		width: 50%;
 	}

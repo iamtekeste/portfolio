@@ -23,6 +23,7 @@ body {
   padding: 15px;
   a {
     text-decoration: none;
+    color: $link-color;
     &:hover {
       text-decoration: none;
     }
@@ -35,15 +36,27 @@ body {
 .hero-unit {
   color: $text-color;
   text-align: center;
+  img {
+    max-width: 110px;
+    border-radius: 50%;
+    margin: 20px 0px;
+  }
   h1 {
     margin-top: 0;
+    font-weight: 400;
   }
   p.short-bio {
       font-size: 1.375em;
+      color: $text-color;
   }
 }
 .social-icons {
   text-align: center;
+  color: $link-color;
+  margin-bottom: 20px;
+  a:hover {
+    color: darken($link-color, 20%);
+  }
   .icon {
     max-width:24px;
     max-height:24px;
