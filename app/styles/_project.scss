@@ -1,0 +1,41 @@
+section.project-page {
+  padding: 20px;
+  @media all and (min-width: 768px) {
+    padding: 20px;
+  }
+  background-color: #fff;
+  header {
+    h1,h2 {
+        margin: 0px;
+        padding-left: 0;
+        color: #000;
+        text-align:center;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+  }
+  p {
+    margin: 0;
+  }
+
+  .builtwith {
+    text-align: center;
+    margin-bottom: 20px;
+    span {
+      font-weight: bold;
+    }
+    ul {
+        display:inline-block;
+        li {
+          background: $primary-color;
+          padding: 5px;
+          color: #fff;
+          font-size: 14px;
+        }
+    }
+  }
+  div.screenshots {
+    margin-top: 20px;
+  }
+}

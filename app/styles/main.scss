@@ -5,6 +5,7 @@
 @import "_navigation";
 @import "_filters";
 @import "_projects";
+@import "_project";
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -67,17 +68,6 @@ body {
   }
 }
 
-header {
-  h1 {
-    color: #fff;
-    font-weight: 400;
-    margin: 20px 0px;
-    padding-left: 10px;
-    font-size: 1.6em;
-  }
-}
-
-
 /** about.html **/
 section.about, section.contact {
   padding: 20px;
@@ -86,6 +76,7 @@ section.about, section.contact {
   }
   background-color: #fff;
   header h1 {
+    margin: 0;
     margin-bottom:20px;
     padding-left: 0;
     color: #000;
