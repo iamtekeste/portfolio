@@ -1,22 +1,22 @@
-var express = require('express');
-var path = require('path');
-var app = express();
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const app = express();
+const projects = require('./routes/projects');
 
+mongoose.connect('mongodb://localhost/portfolio');
+
+app.use(bodyParser.json())
+app.use('/projects', projects);
 app.use(express.static(__dirname));
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname + '/index.html'));
 });	
-app.get('/project.html', function(req, res) {
-	res.sendFile(path.join(__dirname + '/project.html'));
-});
-app.get('/about.html', function(req, res) {
-	res.sendFile(path.join(__dirname + '/about.html'));
-});
-app.get('/contact.html', function(req, res) {
-	res.sendFile(path.join(__dirname + '/contact.html'));
-});
 
-app.listen(3000, function(){
+
+
+app.listen(3000, () => {
 
 });
