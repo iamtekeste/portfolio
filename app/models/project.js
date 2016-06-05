@@ -30,6 +30,9 @@ ProjectProvider.addProject = function(project, cb) {
 };
 
 /**
-* 
+* Find project by title
 **/
+ProjectProvider.findByTitle = function(title, cb) {
+	Project.findOne({title: title}, cb);
+};
 module.exports = ProjectProvider;
