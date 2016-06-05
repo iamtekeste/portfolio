@@ -25,14 +25,22 @@ var ProjectProvider = {};
 /**
 * Save new project. Responds to POST request
 **/
-ProjectProvider.addProject = function(project, cb) {
+ProjectProvider.addProject = (project, cb) => {
 	Project.create(project, cb);
 };
 
 /**
 * Find project by title
 **/
-ProjectProvider.findByTitle = function(title, cb) {
+ProjectProvider.findByTitle = (title, cb) => {
 	Project.findOne({title: title}, cb);
 };
+
+/**
+* Find all Projects
+**/
+ProjectProvider.findAll = (cb) => {
+	Project.find(cb);
+};
+
 module.exports = ProjectProvider;
