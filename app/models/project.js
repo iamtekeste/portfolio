@@ -5,6 +5,7 @@ const projectSchema =  new Schema({
 	title: String,
 	subtitle: String, 
 	description: String,
+	slug: String,
 	tags: Array,
 	thumnail: String,
 	screenshots: Array,
@@ -32,8 +33,8 @@ ProjectProvider.addProject = (project, cb) => {
 /**
 * Find project by title
 **/
-ProjectProvider.findByTitle = (title, cb) => {
-	Project.findOne({title: title}, cb);
+ProjectProvider.findBySlug = (slug, cb) => {
+	Project.findOne({slug: slug}, cb);
 };
 
 /**
