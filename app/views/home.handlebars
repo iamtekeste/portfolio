@@ -1,0 +1,22 @@
+{{#each projects}}
+<section class="projects">
+  <div class="project">
+    <a href="/projects/{{slug}}/">
+      <img src="https://placekitten.com/g/600/500" alt="Project Title">
+      <div class="details">
+        <div class="title">
+          {{title}}
+        </div>
+        <div class="subtitle">
+          {{subtitle}}
+        </div>
+        <div class="tags">
+          {{#each tags}}
+             <span class="tag">{{this}}</span>
+          {{/each}}
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+{{/each}}
