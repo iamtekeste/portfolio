@@ -1,4 +1,5 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -7,16 +8,22 @@ const projects = require('./routes/projects');
 
 mongoose.connect('mongodb://localhost/portfolio');
 
+/** Setup express handlebars **/
+var hbs = exphbs.create({
+	defaultLayout: 'main',
+	layoutsDir: "app/views/layouts",
+	partialsDir: ['app/views/partials']
+});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, '/views'));
+
+/** -- End --  **/
+app.use(express.static(__dirname));
 app.use(bodyParser.json())
 app.use('/projects', projects);
-app.use(express.static(__dirname));
-
-app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname + '/index.html'));
-});	
-
-
+app.use('/', projects);
 
 app.listen(3000, () => {
-
+	console.log('listening on http://localhost:3000');
 });
