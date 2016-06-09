@@ -3,9 +3,9 @@ const express = require('express');
 const router = express.Router();
 const ProjectProvider = require('../models/project');
 
-router.get('/:title', (req, res) => {
-	const title = req.params.title;
-	ProjectProvider.findByTitle(title, (err, project) => {
+router.get('/:slug', (req, res) => {
+	const slug = req.params.slug;
+	ProjectProvider.findBySlug(slug, (err, project) => {
 		if(err) return err;
 		//here you would render a mustache view instead of returning a json
 		return res.json(project);
@@ -23,9 +23,7 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
 	ProjectProvider.findAll((err, projects) => {
 		if(err) return err;
-
-		//here you would render a mustache view instead of returning a json
-		res.json(projects);
+		res.render('home', {projects: projects});
 	});
 });
 
