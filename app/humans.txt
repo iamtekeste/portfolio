@@ -1,1 +1,6 @@
-Icons by IconMoo
+Developed by Tekeste Kidanu - @iamtekeste
+Thank you to
+  -Node.JS
+  -ExpressJs
+  -MongoDB
+  -And the other super awesome opensource projects
