@@ -1,8 +1,12 @@
+{{#section 'head'}}
+  <title>Home | Tekeste</title>
+{{/section}}
+
 {{#each projects}}
 <section class="projects">
   <div class="project">
     <a href="/projects/{{slug}}/">
-      <img src="https://placekitten.com/g/600/500" alt="Project Title">
+      <img src="https://placekitten.com/g/600/500" alt="{{title}}">
       <div class="details">
         <div class="title">
           {{title}}
