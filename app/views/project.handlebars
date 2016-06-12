@@ -1,0 +1,25 @@
+{{#section 'head'}}
+  <title>{{project.title}} | Projects</title>
+{{/section}}
+<section class="project-page">
+  <header>
+    <h1>{{project.title}}</h1>
+    <h2>{{project.subtitle}}</h2>
+  </header>
+  <div class="builtwith">
+    <span>Built with</span>
+    <ul class="inline-list">
+    {{#each project.tags}}
+      <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="description">
+    <p>{{project.description}}</p>
+  </div>
+  <div class="screenshots">
+    {{#each project.screenshots}}
+      <img src="images/{{this}}" alt="home" class="img-responsive">
+    {{/each}}
+  </div>
+</section>
