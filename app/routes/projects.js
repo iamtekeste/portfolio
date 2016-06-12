@@ -8,7 +8,7 @@ router.get('/:slug', (req, res) => {
 	ProjectProvider.findBySlug(slug, (err, project) => {
 		if(err) return err;
 		//here you would render a mustache view instead of returning a json
-		return res.json(project);
+		res.render('project', {project: project});
 	});
 });
 
@@ -17,13 +17,6 @@ router.post('/', (req, res) => {
 	ProjectProvider.addProject(project, (err, project) => {
 		if(err) return err;
 		return res.json(project);
-	});
-});
-
-router.get('/', (req, res) => {
-	ProjectProvider.findAll((err, projects) => {
-		if(err) return err;
-		res.render('home', {projects: projects});
 	});
 });
 
