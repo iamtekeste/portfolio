@@ -12,8 +12,8 @@ mongoose.connect('mongodb://localhost/portfolio');
 /** Setup express handlebars **/
 var hbs = exphbs.create({
 	defaultLayout: 'main',
-	layoutsDir: "app/views/layouts",
-	partialsDir: ['app/views/partials'],
+	layoutsDir: "views/layouts",
+	partialsDir: ['views/partials'],
 	menu: ['Projects'],
 	helpers: {
 	    section: function(name, options){
