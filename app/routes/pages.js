@@ -17,5 +17,8 @@ router.get('/about', (req, res) => {
 router.get('/contact', (req, res) => {
 	res.render('contact', {active_contact: true});
 });
+router.post('/contact', (req, res) => {
+	res.json(req.body.email);
+});
 
 module.exports = router;
