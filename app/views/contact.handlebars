@@ -5,10 +5,10 @@
   <header>
     <h1>Hello!</h1>
   </header>
-  <form action="" class="contact-form">
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="fullname" placeholder="Who should I call you?">
-    <textarea name="message" placeholder="Your message"></textarea>
+  <form action="/contact" class="contact-form" method="POST">
+    <input type="email" name="email" placeholder="Email" required="">
+    <input type="text" name="fullname" placeholder="Who should I call you?" required>
+    <textarea name="message" placeholder="Your message" required></textarea>
     <input type="submit" value="Send" class="send">
   </form>
 </section>
