@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var ProjectProvider = require('../models/project');
+var Mailer = require('../services/mailer');
 
 router.get('/', (req, res) => {
 	ProjectProvider.findAll((err, projects) => {
@@ -18,7 +19,9 @@ router.get('/contact', (req, res) => {
 	res.render('contact', {active_contact: true});
 });
 router.post('/contact', (req, res) => {
-	res.json(req.body.email);
+	var formData = req.body;
+	Mailer(formData.email, formData.name, formData.message);
+	// res.json(req.body.email);
 });
 
 module.exports = router;
