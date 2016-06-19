@@ -1,7 +1,7 @@
 var nodemailer = require('nodemailer');
 var mg = require('nodemailer-mailgun-transport');
 
-	var Mailer = function(email, name, message) {
+	var Mailer = function(email, name, message, cb) {
 	var auth = {
 	  auth: {
 	    api_key: process.env.MailGun,
@@ -14,14 +14,14 @@ var mg = require('nodemailer-mailgun-transport');
 	nodemailerMailgun.sendMail({
 	  from: email,
 	  to: 'iamtekeste@gmail.com', // An array if you have multiple recipients.
-	  subject: `Message from $name`,
+	  subject: 'Message from ' + name,
 	  text: message
 	}, function (err, info) {
 	  if (err) {
-	    return err;
+	    cb(false);
 	  }
 	  else {
-	    return info;
+	    cb(true);
 	  }
 	});
 }

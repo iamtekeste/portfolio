@@ -20,9 +20,10 @@ router.get('/contact', (req, res) => {
 });
 router.post('/contact', (req, res) => {
 	var formData = req.body;
-	var status = Mailer(formData.email, formData.name, formData.message);
-	res.json({status: status});
-	// res.json(req.body.email);
+	Mailer(formData.email, formData.fullname, formData.message, function(success) {
+		console.log(success);
+		res.json(success);
+	});
 });
 
 module.exports = router;
