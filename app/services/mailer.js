@@ -18,10 +18,10 @@ var mg = require('nodemailer-mailgun-transport');
 	  text: message
 	}, function (err, info) {
 	  if (err) {
-	    console.log('Error: ' + err);
+	    return err;
 	  }
 	  else {
-	    console.log('Response: ' + info);
+	    return info;
 	  }
 	});
 }
