@@ -1,12 +1,12 @@
 var nodemailer = require('nodemailer');
 var mg = require('nodemailer-mailgun-transport');
 
-	var Mailer = function(email, name, message, cb) {
+var Mailer = function(email, name, message, cb) {
 	var auth = {
-	  auth: {
-	    api_key: process.env.MailGun,
-	    domain: 'tekeste.me'
-	  }
+		auth: {
+			api_key: process.env.MailGun,
+			domain: 'tekeste.me'
+		}
 	}
 
 	var nodemailerMailgun = nodemailer.createTransport(mg(auth));
@@ -17,12 +17,12 @@ var mg = require('nodemailer-mailgun-transport');
 	  subject: 'Message from ' + name,
 	  text: message
 	}, function (err, info) {
-	  if (err) {
-	    cb(false);
-	  }
-	  else {
-	    cb(true);
-	  }
+		if (err) {
+			cb(false);
+		}
+		else {
+			cb(true);
+		}
 	});
 }
 
