@@ -21,8 +21,7 @@ router.get('/contact', (req, res) => {
 router.post('/contact', (req, res) => {
 	var formData = req.body;
 	Mailer(formData.email, formData.fullname, formData.message, function(success) {
-		console.log(success);
-		res.json(success);
+		res.render('success', {active_contact: true});
 	});
 });
 
